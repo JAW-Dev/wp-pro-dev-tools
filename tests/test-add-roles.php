@@ -44,7 +44,6 @@ class PDT_Add_Roles_Test extends Pro_Dev_Tools_UnitTestCase {
 		$current_roles = (array) $wp_roles->roles;
 		$roles         = array(
 			'developer',
-			'core-administrator',
 		);
 
 		foreach ( $roles as $role ) {
@@ -62,7 +61,6 @@ class PDT_Add_Roles_Test extends Pro_Dev_Tools_UnitTestCase {
 	 */
 	public function test_get_role_capabilities() {
 		$developer  = $this->class->get_role_capabilities( 'developer' );
-		$core_admin = $this->class->get_role_capabilities( 'core-administrator' );
 		$result = array(
 			'switch_themes'          => true,
 			'edit_themes'            => true,
@@ -127,6 +125,5 @@ class PDT_Add_Roles_Test extends Pro_Dev_Tools_UnitTestCase {
 			'export'                 => true,
 		);
 		$this->assertEquals( $result, $developer );
-		$this->assertEquals( $result, $core_admin );
 	}
 }
