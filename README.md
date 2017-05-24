@@ -1,12 +1,4 @@
 # Pro Dev Tools #
-**Contributors:**      Jason Witt  
-**Donate link:**       https://github.com/jawittdesigns/pro-dev-tools  
-**Tags:**  
-**Requires at least:** 4.4  
-**Tested up to:**      4.7.2
-**Stable tag:**        1.0.0  
-**License:**           GPLv2  
-**License URI:**       http://www.gnu.org/licenses/gpl-2.0.html  
 
 A WordPress plugin that has tools and functionality that will assist you in WordPress development.
 
