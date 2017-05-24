@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/jawittdesigns/por-dev-tools.svg?branch=master)](https://travis-ci.org/jawittdesigns/por-dev-tools)
+
 # Pro Dev Tools #
 
 A WordPress plugin that has tools and functionality that will assist you in WordPress development.
