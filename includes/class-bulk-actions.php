@@ -93,7 +93,7 @@ class PDT_Bulk_Actions {
 
 		$actions['required'] = apply_filters( 'pro_dev_tools_bulk_action_required_text', __( 'Required', 'pro-dev-tools' ) );
 
-		if ( count( $this->required_plugins ) > 0 && is_array( $this->required_plugins ) ) {
+		if ( count( (array) $this->required_plugins ) > 0 && is_array( $this->required_plugins ) ) {
 			$actions['not-required'] = apply_filters( 'pro_dev_tools_bulk_action_not_required_text', __( 'Not Required', 'pro-dev-tools' ) );
 		}
 
