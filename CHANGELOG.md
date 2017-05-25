@@ -1,7 +1,5 @@
 # Pro Dev Tools #
 
-Initial Commit
-
 ## 1.0.2 ##
 - Removed class init parentheses
 
