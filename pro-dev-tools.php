@@ -14,7 +14,7 @@
  * @link    https://github.com/jawittdesigns/pro-dev-tools
  *
  * @package Pro_Dev_Tools
- * @version 1.0.1
+ * @version 1.0.2
  */
 
 /**
@@ -237,7 +237,7 @@ final class Pro_Dev_Tools {
 	/**
 	 * Attach other plugin classes to the base plugin class.
 	 *
-	 * @since  NEXT
+	 * @since 1.0.2
 	 */
 	public function plugin_classes() {
 
@@ -252,7 +252,7 @@ final class Pro_Dev_Tools {
 	/**
 	 * Activate the plugin.
 	 *
-	 * @since  NEXT
+	 * @since 1.0.2
 	 */
 	public function _activate() {
 
