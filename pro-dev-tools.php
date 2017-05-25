@@ -14,7 +14,7 @@
  * @link    https://github.com/jawittdesigns/pro-dev-tools
  *
  * @package Pro_Dev_Tools
- * @version 1.0.0
+ * @version 1.0.1
  */
 
 /**

@@ -12,7 +12,7 @@ if ( ! function_exists( 'is_allowed_role' ) ) {
 	/**
 	 * Is Developer.
 	 *
-	 * @since  NEXT
+	 * @since 1.0.1
 	 * @author Jason Witt
 	 *
 	 * @return boolean

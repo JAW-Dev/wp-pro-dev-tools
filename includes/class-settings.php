@@ -119,7 +119,7 @@ class PDT_Settings {
 	 * Include Field Views.
 	 *
 	 * @author Jason Witt
-	 * @since  0.0.1
+	 * @since  1.0.0
 	 *
 	 * @return array $fields An array of field views.
 	 */
@@ -181,7 +181,7 @@ class PDT_Settings {
 	 * Get Active Tab.
 	 *
 	 * @author Jason Witt
-	 * @since  0.0.1
+	 * @since  1.0.0
 	 *
 	 * @param string $slug The tabd slug.
 	 *
@@ -197,7 +197,7 @@ class PDT_Settings {
 	 * Save.
 	 *
 	 * @author Jason Witt
-	 * @since  0.0.1
+	 * @since  1.0.1
 	 *
 	 * @return void
 	 */
@@ -240,7 +240,7 @@ class PDT_Settings {
 	 * Admin notice.
 	 *
 	 * @author Jason Witt
-	 * @since  0.0.1
+	 * @since  1.0.0
 	 *
 	 * @return void
 	 */
@@ -258,7 +258,7 @@ class PDT_Settings {
 	 * Redirect After Save.
 	 *
 	 * @author Jason Witt
-	 * @since  0.0.1
+	 * @since  1.0.0
 	 *
 	 * @return void
 	 */
@@ -276,7 +276,7 @@ class PDT_Settings {
 	 * Sanitize.
 	 *
 	 * @author Jason Witt
-	 * @since  0.0.1
+	 * @since  1.0.0
 	 *
 	 * @param array $input The data to input.
 	 *
