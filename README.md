@@ -9,7 +9,3 @@ Pro Dev Tools has the follwoing
 - Required plugns. Select plugins that are required to be active. These plugins will be automaticly active and the plugins will be removed from the admin plugins list for all roles besides the "Developer" role.
 - Enviroment alerts. Alerts that show in the admin and the from end that help you keep track if you are are looking at the Staging, Production, or you local development enviroment.
 - More to come.
-
-### Version ###
-
-v1.0.0
