@@ -209,7 +209,8 @@ class PDT_Settings {
 		}
 
 		// The form nonce.
-		$nonce = $this->settings_name . '_nonce';
+		$nonce   = $this->settings_name . '_nonce';
+		$options = pro_dev_tools()->get_settings;
 
 		// Bail if nonce is not verified.
 		if ( ! isset( $_POST[ $nonce ] ) || ! wp_verify_nonce( $_POST[ $nonce ], $nonce ) ) {
@@ -217,7 +218,7 @@ class PDT_Settings {
 		}
 
 		// The post data.
-		$settings = $this->sanitize( $_POST[ $this->settings_name ] );
+		$settings = array_merge( $options, $this->sanitize( $_POST[ $this->settings_name ] ) );
 
 		if ( isset( $settings ) ) {
 			if ( is_multisite() ) {
@@ -246,7 +247,7 @@ class PDT_Settings {
 	public function admin_notice() {
 		if ( isset( $_GET['saved'] ) ) {
 			?>
-			<div class="notice notice-success is-dismissible"> 
+			<div class="notice notice-success is-dismissible">
 				<p><strong>Settings saved.</strong></p>
 			</div>
 			<?php
@@ -298,37 +299,6 @@ class PDT_Settings {
 			$output[ $key ] = ( ! is_array( $value ) ) ? sanitize_text_field( $value ) : $value;
 		}
 		// Filter.
-		return apply_filters( 'pro-dev-tools-settings-sanitized-data', $output, $input );
+		return apply_filters( 'pro_dev_tools_settings_sanitized_data', $output, $input );
 	}
 }
-
-/*
-Function pro_dev_tools_text_field_0_render(  ) {
-
-	$options = get_option( 'pro_dev_tools_settings' );
-	?>
-	<input type='text' name='pro_dev_tools_settings[pro_dev_tools_text_field_0]' value='<?php echo $options['pro_dev_tools_text_field_0']; ?>'>
-	<?php
-
-}
-
-
-function pro_dev_tools_checkbox_field_1_render(  ) {
-
-	$options = get_option( 'pro_dev_tools_settings' );
-	?>
-	<input type='checkbox' name='pro_dev_tools_settings[pro_dev_tools_checkbox_field_1]' <?php checked( $options['pro_dev_tools_checkbox_field_1'], 1 ); ?> value='1'>
-	<?php
-
-}
-
-
-function pro_dev_tools_radio_field_2_render(  ) {
-
-	$options = get_option( 'pro_dev_tools_settings' );
-	?>
-	<input type='radio' name='pro_dev_tools_settings[pro_dev_tools_radio_field_2]' <?php checked( $options['pro_dev_tools_radio_field_2'], 1 ); ?> value='1'>
-	<?php
-
-}
-*/
