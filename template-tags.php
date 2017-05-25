@@ -26,7 +26,7 @@ if ( ! function_exists( 'is_allowed_role' ) ) {
 		}
 		if ( null !== $allowed_roles ) {
 			foreach ( $allowed_roles as $role ) {
-				$is_allowed = ( in_array( $role, $current_user->roles ) ) ? true : false;
+				$is_allowed = ( in_array( $role, $current_user->roles, true ) ) ? true : false;
 				if ( $is_allowed || current_user_can( 'developer' ) ) {
 					return true;
 				}
@@ -35,6 +35,6 @@ if ( ! function_exists( 'is_allowed_role' ) ) {
 		if ( current_user_can( 'developer' ) ) {
 			return true;
 		}
-		return;
+		return false;
 	}
 }
