@@ -237,27 +237,27 @@ final class Pro_Dev_Tools {
 	/**
 	 * Attach other plugin classes to the base plugin class.
 	 *
-	 * @since  1.0.0
+	 * @since  NEXT
 	 */
 	public function plugin_classes() {
 
-		$this->settings         = new PDT_Settings();
-		$this->add_roles        = new PDT_Add_Roles();
-		$this->required_plugins = new PDT_Required_Plugins();
-		$this->action_links     = new PDT_Action_Links();
-		$this->bulk_actions     = new PDT_Bulk_Actions( );
-		$this->enviroment_alert = new PDT_Enviroment_Alert();
+		$this->settings         = new PDT_Settings;
+		$this->add_roles        = new PDT_Add_Roles;
+		$this->required_plugins = new PDT_Required_Plugins;
+		$this->action_links     = new PDT_Action_Links;
+		$this->bulk_actions     = new PDT_Bulk_Actions;
+		$this->enviroment_alert = new PDT_Enviroment_Alert;
 	} // END OF PLUGIN CLASSES FUNCTION
 
 	/**
 	 * Activate the plugin.
 	 *
-	 * @since  1.0.0
+	 * @since  NEXT
 	 */
 	public function _activate() {
 
 		// Add new roles.
-		new PDT_Add_Roles();
+		new PDT_Add_Roles;
 
 		// Make sure any rewrite functionality has been loaded.
 		flush_rewrite_rules();
