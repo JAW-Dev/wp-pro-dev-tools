@@ -1,4 +1,4 @@
-/*
+/**
  * Generate .po file for translatable text.
  *
  * @package Boilderplate

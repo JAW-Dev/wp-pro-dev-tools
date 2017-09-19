@@ -1,17 +1,24 @@
 <?php
 /**
- * Pro_Dev_Tools.
+ * Base Test Class.
  *
- * @since   1.0.0
- * @package Pro_Dev_Tools
+ * @package    WP_Pro_Dev_Tools
+ * @subpackage WP_Pro_Dev_Tools\Test
+ * @author     Jason Witt <contact@jawittdesigns.com>
+ * @copyright  Copyright (c) 2017, Jason Witt
+ * @license    GNU General Public License v2 or later
+ * @version    0.0.1
  */
-abstract class Pro_Dev_Tools_UnitTestCase extends WP_UnitTestCase {
+
+/**
+ * Base
+ */
+abstract class Base_UnitTestCase extends WP_UnitTestCase {
 
 	/**
 	 * File.
 	 *
-	 * @author Jason Witt
-	 * @since  1.0.0
+	 * @since NEXT
 	 *
 	 * @var strinf
 	 */
@@ -20,8 +27,7 @@ abstract class Pro_Dev_Tools_UnitTestCase extends WP_UnitTestCase {
 	/**
 	 * Class Object.
 	 *
-	 * @author Jason Witt
-	 * @since  1.0.0
+	 * @since NEXT
 	 *
 	 * @var obnject
 	 */
@@ -30,8 +36,7 @@ abstract class Pro_Dev_Tools_UnitTestCase extends WP_UnitTestCase {
 	/**
 	 * Class name.
 	 *
-	 * @author Jason Witt
-	 * @since  1.0.0
+	 * @since NEXT
 	 *
 	 * @var string
 	 */
@@ -40,8 +45,7 @@ abstract class Pro_Dev_Tools_UnitTestCase extends WP_UnitTestCase {
 	/**
 	 * Methods.
 	 *
-	 * @author Jason Witt
-	 * @since  1.0.0
+	 * @since NEXT
 	 *
 	 * @var array
 	 */
@@ -50,18 +54,27 @@ abstract class Pro_Dev_Tools_UnitTestCase extends WP_UnitTestCase {
 	/**
 	 * Properties.
 	 *
-	 * @author Jason Witt
-	 * @since  1.0.0
+	 * @since NEXT
 	 *
 	 * @var array
 	 */
 	protected $properties = array();
 
 	/**
+	 * Initialize the class
+	 *
+	 * @since  NEXT
+	 *
+	 * @return string
+	 */
+	public function dirname() {
+		return trailingslashit( plugin_dir_path( __DIR__ ) );
+	}
+
+	/**
 	 * Test if file file exists.
 	 *
-	 * @author Jason Witt
-	 * @since  0.0.1
+	 * @since NEXT
 	 *
 	 * @return void
 	 */
@@ -76,7 +89,7 @@ abstract class Pro_Dev_Tools_UnitTestCase extends WP_UnitTestCase {
 	/**
 	 * Test if class exists.
 	 *
-	 * @since  1.0.0
+	 * @since NEXT
 	 */
 	public function test_class_exists() {
 
@@ -89,8 +102,7 @@ abstract class Pro_Dev_Tools_UnitTestCase extends WP_UnitTestCase {
 	/**
 	 * Test if methods exist.
 	 *
-	 * @author Jason Witt
-	 * @since  0.0.1
+	 * @since NEXT
 	 *
 	 * @return void
 	 */
@@ -107,8 +119,7 @@ abstract class Pro_Dev_Tools_UnitTestCase extends WP_UnitTestCase {
 	/**
 	 * Test if wp_roles property exists.
 	 *
-	 * @author Jason Witt
-	 * @since  0.0.1
+	 * @since NEXT
 	 *
 	 * @return void
 	 */
@@ -125,8 +136,7 @@ abstract class Pro_Dev_Tools_UnitTestCase extends WP_UnitTestCase {
 	/**
 	 * Set Property.
 	 *
-	 * @author Jason Witt
-	 * @since  0.0.1
+	 * @since NEXT
 	 *
 	 * @param object $object   The class object.
 	 * @param string $property The name of the property to set.
@@ -135,7 +145,7 @@ abstract class Pro_Dev_Tools_UnitTestCase extends WP_UnitTestCase {
 	 * @return void
 	 */
 	public function set_property( $object, $property, $value ) {
-		$reflection = new \ReflectionClass( $object );
+		$reflection = new ReflectionClass( $object );
 		$reflection_property = $reflection->getProperty( $property );
 		$reflection_property->setAccessible( true );
 		$reflection_property->setValue( $object, $value );
@@ -144,8 +154,7 @@ abstract class Pro_Dev_Tools_UnitTestCase extends WP_UnitTestCase {
 	/**
 	 * Invoke Private Method.
 	 *
-	 * @author Jason Witt
-	 * @since  1.0.0
+	 * @since  NEXT
 	 *
 	 * @param object $object      The class object.
 	 * @param string $method_name The name of the method to invoke.
@@ -155,9 +164,9 @@ abstract class Pro_Dev_Tools_UnitTestCase extends WP_UnitTestCase {
 	 */
 	public function invoke_private_method( &$object, $method_name, $parameters = array() ) {
 		$reflection = new \ReflectionClass( get_class( $object ) );
-	    $reflection_method = $reflection->getMethod( $method_name );
-	    $reflection_method->setAccessible( true );
+		$reflection_method = $reflection->getMethod( $method_name );
+		$reflection_method->setAccessible( true );
 
-	    return $reflection_method->invokeArgs( $object, $parameters );
+		return $reflection_method->invokeArgs( $object, $parameters );
 	}
 }

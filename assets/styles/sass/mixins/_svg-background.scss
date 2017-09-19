@@ -1,0 +1,28 @@
+// ========================================
+// SVG Background
+// ========================================
+
+// Set a background of an element to an svg.
+//
+// @param string $icon       The filename of the svg image without the extention.
+// @param mixed  $size       The image background size.
+// @param string $repeat     The repeat property.
+// @param string $h-position The horizontal position to place the image.
+// @param string v-$position The vertical position to place the image.
+//
+// @example
+//   Basic Usage Sass.
+//     .menu-icon {
+//       @include svg-background("store", 2em, left );
+//     }
+//
+//   Output.
+//     .menu-icon {
+//       background: url('assets/images/svg/store.svg') no-repeat center left;
+//       background-size: 2em;
+//     }
+
+@mixin svg-background($icon, $size: px-to-em(32), $repeat: no-repeat, $v-position: center, $h-position: center) {
+	background: url("#{$path-svg}#{$icon}.svg") $repeat $v-position  $h-position;
+	background-size: $size;
+}

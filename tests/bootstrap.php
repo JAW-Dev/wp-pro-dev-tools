@@ -1,13 +1,17 @@
 <?php
 /**
- * Pro_Dev_Tools Test Bootstrapper.
+ * Test Bootstrapper.
  *
- * @since   1.0.0
- * @package Pro_Dev_Tools
+ * @package    WP_Pro_Dev_Tools
+ * @subpackage WP_Pro_Dev_Tools\Test
+ * @author     Jason Witt <contact@jawittdesigns.com>
+ * @copyright  Copyright (c) 2017, Jason Witt
+ * @license    GNU General Public License v2 or later
+ * @version    0.0.1
  */
 
 // Get our tests directory.
-$_tests_dir = ( getenv( 'WP_TESTS_DIR' ) ) ? getenv( 'WP_TESTS_DIR' ) : '/tmp/wordpress-tests-lib';
+$_tests_dir = '/tmp/wordpress-tests-lib';
 
 // Include our tests functions.
 require_once $_tests_dir . '/includes/functions.php';
@@ -15,21 +19,18 @@ require_once $_tests_dir . '/includes/functions.php';
 /**
  * Manually require our plugin for testing.
  *
- * @since 1.0.0
+ * @since 0.0.1
  */
-function _manually_load_pro_dev_tools_plugin() {
-
-	// Include the REST API main plugin file if we're using it so we can run endpoint tests.
-	if ( class_exists( 'WP_REST_Controller' ) && file_exists( WP_PLUGIN_DIR . '/rest-api/plugin.php' ) ) {
-		require WP_PLUGIN_DIR . '/rest-api/plugin.php';
-	}
+function _manually_load_plugins() {
 
 	// Require our plugin.
-	require dirname( dirname( __FILE__ ) ) . '/pro-dev-tools.php';
+	if ( file_exists( dirname( dirname( __FILE__ ) ) . 'plugin-file-name.php' ) ) {
+		require dirname( dirname( __FILE__ ) ) . '/plugin-file-name.php';
+	}
 
 	// Plugins to activate.
 	$active_plugins = array(
-		'pro-dev-tools/pro-dev-tools.php',
+		'plugin-file-name/plugin-file-name.php',
 	);
 
 	// Update the active_plugins options with the $active_plugins array.
@@ -37,9 +38,10 @@ function _manually_load_pro_dev_tools_plugin() {
 }
 
 // Inject in our plugin.
-tests_add_filter( 'muplugins_loaded', '_manually_load_pro_dev_tools_plugin' );
+tests_add_filter( 'muplugins_loaded', '_manually_load_plugins' );
 
 // Include the main tests bootstrapper.
 require $_tests_dir . '/includes/bootstrap.php';
 
+// Require Base class.
 require dirname( __FILE__ ) . '/base.php';

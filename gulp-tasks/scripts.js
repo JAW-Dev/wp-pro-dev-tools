@@ -1,4 +1,4 @@
-/*
+/**
  * Compile Scripts.
  *
  * @package Boilderplate

@@ -1,0 +1,33 @@
+// ========================================
+// Clearfix
+// ========================================
+
+// Add a cleafix to elemets
+//
+// @example
+//   Basic Usage Sass.
+//     .foo {
+//       @include clearfix;
+//     }
+//
+//   Output.
+//     .foo::before, .foo::after {
+//        content: "";
+//        display: table;
+//     }
+//     .foo::after {
+//        clear: both;
+//     }
+
+
+@mixin clearfix {
+	&::before,
+	&::after {
+		content: "";
+		display: table;
+	}
+
+	&::after {
+		clear: both;
+	}
+}

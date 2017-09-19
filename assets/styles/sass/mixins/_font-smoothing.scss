@@ -1,0 +1,24 @@
+// ========================================
+// Fomt Smoothing
+// ========================================
+
+// Improve the font rendering to better match client PSDs.
+// Side effects include: slower rendering of pages.
+// Use only when necessary!
+//
+// @example
+//   Basic Usage Sass.
+//     .foo {
+//       @include font-smoothing;
+//     }
+//
+//   Output.
+//     .foo {
+//			 -webkit-font-smoothing: antialiased;
+//			 -moz-osx-font-smoothing: grayscale;
+//     }
+
+@mixin font-smoothing {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}

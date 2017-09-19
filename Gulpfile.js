@@ -26,7 +26,6 @@ gulpUtil     = require( 'gulp-util' );
 imagemin     = require( 'gulp-imagemin' );
 mqpacker     = require( 'css-mqpacker' );
 notify       = require( 'gulp-notify' );
-notify       = require( 'gulp-notify' );
 plumber      = require( 'gulp-plumber' );
 postcss      = require( 'gulp-postcss' );
 rename       = require( 'gulp-rename' );
@@ -38,36 +37,67 @@ sourcemaps   = require( 'gulp-sourcemaps' );
 wpPot        = require( 'gulp-wp-pot' );
 uglify       = require( 'gulp-uglify' ),
 paths        = {
-  'styles': 'assets/styles',
-  'images': 'assets/images',
-  'scripts': 'assets/scripts',
-  'sass': 'assets/styles/sass'
+	'styles': 'assets/styles',
+	'images': 'assets/images',
+	'scripts': 'assets/scripts',
+	'sass': 'assets/styles/sass',
+	'dist': './dist'
 },
 files = {
 	'css': paths.styles + '/*.css',
 	'cssmin': paths.styles + '/*.min.css',
 	'concatScripts': paths.scripts + '/concat/*.js',
-  'html': [ './*.html', './**/*.html' ],
+	'html': [ './*.html', './**/*.html' ],
 	'images': paths.images + '/*',
-  'svg': paths.images + '/*.svg',
+	'svg': paths.images + '/*.svg',
 	'js': paths.scripts + '/*.js',
-  'jsmin': paths.scripts + '/*.min.js',
-  'php': [ './*.php', './**/*.php' ],
+	'jsmin': paths.scripts + '/*.min.js',
+	'php': [ './*.php', './**/*.php' ],
 	'sass': paths.sass + '/**/*.scss',
-  'styles': paths.styles + '/style.css'
+	'styles': paths.styles + '/style.css'
 },
-getPackageJson = () => {
-  return JSON.parse( fs.readFileSync( './package.json', 'utf8' ) );
-};
-handleErrors = () => {
-	var args = Array.prototype.slice.call( arguments );
+dist = [
+	'./**/*',
+	'!bin',
+	'!bin/**',
+	'!dist',
+	'!dist/**',
+	'!git',
+	'!git/**',
+	'!gulp-tasks',
+	'!gulp-tasks/**',
+	'!node_modules',
+	'!node_modules/**',
+	'!tests',
+	'!tests/**',
+	'!' + paths.sass,
+	'!' + paths.sass + '/**',
+	'!' + paths.scripts,
+	'!' + paths.scripts + '/**',
+	'!.bablerc',
+	'!.editorconfig',
+	'!.eslintrc.js',
+	'!.gitignore',
+	'!.sas-lint.yml',
+	'!.travis.yml',
+	'!Gulpfile.js',
+	'!package-lock.json',
+	'!package.json',
+	'!phpcs.xml',
+	'!phpmd.xml',
+	'!phpunit.xml',
+	'!yarn.lock'
+],
+getPackageJson = () => { // Get the package.json file content
+	return JSON.parse( fs.readFileSync( './package.json', 'utf8' ) );
+},
+handleErrors = ( err ) => { // Handle the errors.
 	notify.onError({
-		'title': 'Task Failed [<%= error.message %>',
-		'message': 'See console.',
-		'sound': 'Sosumi'
-	}).apply( this, args );
-	gutil.beep();
-	this.emit( 'end' );
+		title: 'Error!',
+		message: '<%= error.message %>',
+		sound: 'Beep'
+	})( err );
+	return plumber();
 };
 
 // Require the gulp tasks.

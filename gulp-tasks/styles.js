@@ -1,4 +1,4 @@
-/*
+/**
  * Compile Styles.
  *
  * @package Boilderplate
@@ -6,7 +6,7 @@
  * @since 1.0.0
  */
 
-/* global autoprefixer, cssnano, del, files, gulp, handleErrors, mqpacker, paths, plumber, postcss, rename, sass, sourcemaps, strip */
+/* global autoprefixer, cssnano, del, files, gulp, handleErrors, mqpacker, paths, plumber, postcss, rename, sass, sourcemaps */
 
 /**
  * Delete style.css and style.min.css before we minify and optimize

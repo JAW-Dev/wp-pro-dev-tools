@@ -1,0 +1,23 @@
+// ========================================
+// Px To ~
+// ========================================
+
+// Convert px to em
+//
+// @param {int} $size The px amount to convert.
+//
+// @return string The converted px size.
+@function px-to-em($size, $base: $font-size-base) {
+	$calculated-size: $size / $base;
+	@return #{$calculated-size}em;
+}
+
+// Convert px to rem
+//
+// @param {int} $size The px amount to convert.
+//
+// @return string The converted px size.
+@function px-to-rem($size, $base: $font-size-base) {
+	$calculated-size: $size / $base;
+	@return #{$calculated-size}rem;
+}

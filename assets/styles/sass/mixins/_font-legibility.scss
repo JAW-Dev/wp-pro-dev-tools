@@ -1,0 +1,28 @@
+// ========================================
+// Font Legibility
+// ========================================
+
+// Improve the font rendering to better match client PSDs.
+// Side effects include: slower rednering of pages.
+// Use only when necessary!
+//
+// @example
+//   Basic Usage Sass.
+//     .foo {
+//       @include font-legibility;
+//     }
+//
+//   Output.
+//     .foo {
+//        text-rendering: optimizeLegibility;
+//        -moz-font-feature-settings: 'liga', 'kern';
+//        -moz-osx-font-smoothing: grayscale;
+//        -webkit-font-smoothing: antialiased;
+//     }
+
+@mixin font-legibility {
+	-moz-font-feature-settings: 'liga', 'kern';
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}

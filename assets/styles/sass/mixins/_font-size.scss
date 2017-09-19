@@ -1,0 +1,22 @@
+// ========================================
+// Font Legibility
+// ========================================
+
+// Formats font size to rem with a px fallback
+//
+// @example
+//   Basic Usage Sass.
+//     .foo {
+//       @include font-size(16);
+//     }
+//
+//   Output.
+//     .foo {
+//        font-size: 16px;
+//        font-size: 1rem;
+//     }
+
+@mixin font-size($size-value: 1px) {
+	font-size: $size-value;
+	font-size: px-to-rem($size-value);
+}

@@ -1,4 +1,4 @@
-/*
+/**
  * Minify Images.
  *
  * @package Boilderplate

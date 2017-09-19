@@ -1,0 +1,23 @@
+// ========================================
+// Centering
+// ========================================
+
+// Center elements vericaly
+//
+// @example
+//   Basic Usage Sass.
+//     .foo {
+//       @include vertical-center;
+//     }
+//
+//   Output.
+//     .foo {
+//        position: relative;
+//        top: 50%;
+//        transform: translateY(-50%);
+//     }
+@mixin vertical-center {
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+}

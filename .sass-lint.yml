@@ -24,9 +24,8 @@ rules:
   # Line Spacing
   one-declaration-per-line: 1
   empty-line-between-blocks:
-    - 1
-    -
-      allow-single-line-rulesets: false
+   - 1
+   - allow-single-line-rulesets: false
   single-line-per-selector: 1
 
   # Disallows
@@ -34,9 +33,8 @@ rules:
   no-color-hex: 0
   no-color-keywords: 1
   no-color-literals:
-    - 1
-    -
-      allow-rgba: true
+   - 1
+   - allow-rgba: true
   no-combinators: 0
   no-css-comments: 1
   no-debug: 1
@@ -49,26 +47,23 @@ rules:
   no-invalid-hex: 1
   no-mergeable-selectors: 1
   no-misspelled-properties:
-    - 1
-    -
-      'extra-properties':
-        - 'overflow-scrolling'
+   - 1
+   - 'extra-properties':
+   - 'overflow-scrolling'
   no-qualifying-elements:
-    - 1
-    -
-      allow-element-with-attribute: true
-  no-trailing-whitespace: 1
+   - 1
+   - allow-element-with-attribute: true
+  no-trailing-whitespace: 0
   no-trailing-zero: 1
   no-transition-all: 1
   no-universal-selectors: 0
   no-url-domains: 1
   no-url-protocols: 1
-  no-vendor-prefixes: 1
+  no-vendor-prefixes: 0
   no-warn: 1
   property-units:
-    - 1
-    -
-      per-property: { width: ['rem', 'vw'], height: ['rem', 'vh'], margin: ['rem'], padding: ['rem'] }
+   - 1
+   - per-property: { width: ['rem', 'vw'], height: ['rem', 'vh'], margin: ['rem'], padding: ['rem'] }
 
   # Nesting
   declarations-before-nesting: 1
@@ -78,81 +73,67 @@ rules:
 
   # Name Formats
   class-name-format:
-    - 1
-    -
-      convention: 'hyphenatedbem'
+   - 1
+   - convention: 'hyphenatedbem'
   function-name-format:
-    - 1
-    -
-      convention: 'hyphenatedlowercase'
-      allow-leading-underscore: true
+   - 1
+   - convention: 'hyphenatedlowercase'
+   - allow-leading-underscore: true
   id-name-format:
-    - 1
-    -
-      allow-leading-underscore: false
-      convention: hyphenatedlowercase
+   - 1
+   - allow-leading-underscore: false
+   - convention: hyphenatedlowercase
   mixin-name-format:
-    - 1
-    -
-      convention: 'hyphenatedlowercase'
-      allow-leading-underscore: true
+   - 1
+   - convention: 'hyphenatedlowercase'
+   - allow-leading-underscore: true
   placeholder-name-format:
-    - 1
-    -
-      convention: 'hyphenatedbem'
-      allow-leading-underscore: true
+   - 1
+   - convention: 'hyphenatedbem'
+   - allow-leading-underscore: true
   variable-name-format:
-    - 1
-    -
-      convention: 'hyphenatedlowercase'
-      allow-leading-underscore: true
+   - 1
+   - convention: 'hyphenatedlowercase'
+   - allow-leading-underscore: true
 
   # Style Guide
   attribute-quotes: 1
   bem-depth: 0
   border-zero:
-    - 1
-    - convention: 'none' # border: 0; will set border-width: 0; while border: none; will set border-style: none;
+   - 1
+   - convention: 'none' # border: 0; will set border-width: 0; while border: none; will set border-style: none;
   brace-style: #
-    - 1
-    - style: '1tbs'
-      allow-single-line: false
+   - 1
+   - style: '1tbs'
+   - allow-single-line: false
   clean-import-paths: 0
   empty-args: 1
   hex-length:
-    - 1
-    - style: long
+   - 1
+   - style: long
   hex-notation:
-    - 1
-    - style: uppercase
+   - 1
+   - style: uppercase
   indentation:
-    - 1
-    - size: 2
-  leading-zero: 1
+   - 1
+   - size: 'tab'
+  leading-zero: 0
   max-line-length:
-    - 1
-    - length: 80
+   - 1
+   - length: 120
   max-file-line-count: 0
   nesting-depth:
-    - 1
-    - max-depth: 2
+   - 1
+   - max-depth: 2
   property-sort-order: 1
   pseudo-element: 1
   quotes:
-    - 1
-    -
-      style: double
-  shorthand-values:
-    - 1
-    -
-      allowed-shorthands:
-        - 1
-        - 2
+   - 1
+   - style: double
   url-quotes: 1
   variable-for-property:
-    - 1
-    -
-      properties: ['color']
+   - 1
+   - properties: ['color']
   zero-unit: 0
 
   # Inner Spacing

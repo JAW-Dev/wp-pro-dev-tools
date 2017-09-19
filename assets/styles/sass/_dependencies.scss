@@ -1,0 +1,31 @@
+// ========================================
+// Dependencies
+// ========================================
+
+// Normalize.css
+@import "node_modules/normalize-scss/sass/normalize";
+@include normalize;
+
+// Variables
+@import "variables/index";
+
+// Functions
+@import "functions/index";
+
+// Mixins
+@import "mixins/index";
+
+// Sass-mq: http://sass-mq.github.io/sass-mq/
+$mq-responsive: true;
+
+$mq-breakpoints: (
+	mobile: 320px,
+	mobile-ls: 480px,
+	tablet: 599px,
+	tablet-ls: 1024px,
+	desktop: 1440px,
+);
+
+$mq-static-breakpoint: desktop;
+
+@import "node_modules/sass-mq/mq";
