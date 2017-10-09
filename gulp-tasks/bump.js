@@ -57,6 +57,8 @@ gulp.task( 'bump', [ 'packageBump' ], () => {
 	})
 	.pipe( plumber({'errorHandler': handleErrors}) )
 	.pipe( replace( /@since[ \t]+NEXT/g, '@since ' + pkg.version ) )
-	.pipe( replace( /@version(.*)/g, '@version ' + pkg.version ) )
+	.pipe( replace( /@version(?!\s\s\s\s)\s\s\s(.*)/g, '@version   ' + pkg.version ) )
+	.pipe( replace( /@version\s\s\s\s(.*)/g, '@version    ' + pkg.version ) )
+	.pipe( replace( /\* Version:\s\s\s\s\s(.*)/g, '* Version:     ' + pkg.version ) )
 	.pipe( gulp.dest( './' ) );
 });
