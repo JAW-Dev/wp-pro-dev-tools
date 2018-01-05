@@ -179,7 +179,7 @@ if ( ! class_exists( 'Enviroment_Alert' ) ) {
 			$domain = $this->get_current_domain_type();
 
 			// Translators: The environment.
-			$message = apply_filters( 'wp_pro_dev_tools_environment_alert_message', wp_sprintf( __( 'You are currently working on the <strong>%1$s</strong> environment.', 'wds_wpmu' ), ucwords( $domain ) ), ucwords( $domain ) );
+			$message = apply_filters( 'wp_pro_dev_tools_environment_alert_message', wp_sprintf( __( 'You are currently in the <strong>%1$s</strong> environment.', 'wds_wpmu' ), ucwords( $domain ) ), ucwords( $domain ) );
 
 			if ( null !== $domain ) {
 
