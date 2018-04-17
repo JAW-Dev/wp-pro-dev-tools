@@ -1,2 +1,2 @@
-# WordPress Plugin Boilerplate
-A WordPress Plugin Boilerplate
+# WP Pro Dev Tools
+A WordPress Plugin for customizing your WordPress enviroment.
