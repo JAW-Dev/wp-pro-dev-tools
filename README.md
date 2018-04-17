@@ -1,2 +1,2 @@
 # WP Pro Dev Tools
-A WordPress Plugin for customizing your WordPress enviroment.
+A WordPress plugin that has tools and functionality that will assist you in WordPress development.
