@@ -71,7 +71,7 @@ if ( ! class_exists( 'Enviroment_Alert' ) ) {
 			$this->options = Root\wp_pro_dev_tools()->get_options;
 
 			// Bail is noticed aren't enabled.
-			if ( ! isset( $this->options['enable-enviroment-notices'] ) || ! $this->options['enable-enviroment-notices'] ) {
+			if ( ! isset( $this->options['enable-enviroment-notices'] ) || 'false' === $this->options['enable-enviroment-notices'] ) {
 				return;
 			}
 
