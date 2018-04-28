@@ -1,5 +1,5 @@
 {
-	"name": "jawittdesigns/wp-pro-dev-tools",
+	"name": "jawittdesigns-wp-pro-dev-tools",
 	"version": "0.0.1",
 	"description": "A WordPress plugin that has tools and functionality that will assist you in WordPress development.",
 	"main": "Gulpfile.js",
